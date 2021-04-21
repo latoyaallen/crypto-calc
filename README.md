@@ -1,5 +1,9 @@
 # Following the redux-toolkit tutorial
 
+## Purpose
+1. Get to know React TookKit
+2. Skill Building: Populate dropdown data from api data
+
 ## Requirements
 
 We'll have two dropsdowns in the UI: a two and a from
@@ -13,3 +17,5 @@ this:
 0.000018 BTC
 
 The state here is the conversion rate
+
+
