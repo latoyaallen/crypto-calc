@@ -6,19 +6,36 @@ import { createSlice } from '@reduxjs/toolkit'
 export const conversionSlice = createSlice({
   name: 'conversion',
   initialState: {
-    value: 100,
-    newCurrency: 'us',
+    amount: 1000,
+    newCurrency: 'usd',
+    rate: 1,
   },
   reducers: {
     convertCurrency: (state, action) => {
       // state.value should be the input value
       // action.payload should be the conversion rate
-      state.value = state.value * action.payload;
+      state.amount = state.amount * action.payload;
     },
 
     convertTo: (state, action) => {
-      console.log(state);
-      console.log(action);
+      // this should be a case statement, and it should be in another file
+      // I'm not going to refactor b/c I just need this as a reference
+      if(action.payload === 'btc') {
+        state.amount = 1000 * 0.000018;
+        state.newCurrency = action.payload;
+      }
+      if(action.payload === 'eth') {
+        state.amount = 1000 * 0.00034;
+        state.newCurrency = action.payload;
+      }
+      if(action.payload === 'mana') {
+        state.amount = 1000 * 0.693397;
+        state.newCurrency = action.payload;
+      }
+      if(action.payload === 'usd') {
+        state.amount = 1000 * 1;
+        state.newCurrency = action.payload;
+      }
     }
   },
 })
